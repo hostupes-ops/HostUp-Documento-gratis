@@ -7,497 +7,189 @@
 <title>Protocolo de Respuesta de Oro — Host Up</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-:root {
-–blue: #2563EB;
-–blue-light: #EFF6FF;
-–black: #0A0A0A;
-–gray: #6B7280;
-–gray-light: #F3F4F6;
-–border: #E5E7EB;
-–white: #FFFFFF;
-}
-
 html { -webkit-text-size-adjust: 100%; }
-
 body {
-background-color: #ECEEF2;
-font-family: ‘DM Sans’, Helvetica, Arial, sans-serif;
-color: #0A0A0A;
-min-height: 100vh;
-padding: 48px 16px 80px;
--webkit-font-smoothing: antialiased;
+  background-color: #ECEEF2;
+  font-family: 'DM Sans', Helvetica, Arial, sans-serif;
+  color: #0A0A0A;
+  min-height: 100vh;
+  padding: 48px 16px 80px;
+  -webkit-font-smoothing: antialiased;
 }
-
-/* PAGE */
 .page {
-max-width: 760px;
-margin: 0 auto;
-background-color: #FFFFFF;
-border-radius: 4px;
-overflow: hidden;
-box-shadow: 0 2px 4px rgba(0,0,0,0.06), 0 12px 48px rgba(0,0,0,0.12);
+  max-width: 760px;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06), 0 12px 48px rgba(0,0,0,0.12);
 }
-
 /* HEADER */
-.header {
-padding: 52px 60px 40px;
-border-bottom: 1.5px solid #E5E7EB;
-}
-
+.header { padding: 52px 60px 40px; border-bottom: 1.5px solid #E5E7EB; }
 .brand-tag {
-display: -webkit-inline-flex;
-display: inline-flex;
--webkit-align-items: center;
-align-items: center;
-gap: 8px;
-font-size: 11px;
-font-weight: 700;
-letter-spacing: 0.13em;
-text-transform: uppercase;
-color: #2563EB;
-margin-bottom: 22px;
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.13em;
+  text-transform: uppercase; color: #2563EB; margin-bottom: 22px;
 }
-
 .brand-dot {
-width: 7px;
-height: 7px;
-background-color: #2563EB;
-border-radius: 50%;
-display: inline-block;
-flex-shrink: 0;
+  width: 7px; height: 7px; background-color: #2563EB;
+  border-radius: 50%; display: inline-block; flex-shrink: 0;
 }
-
 .header h1 {
-font-family: ‘DM Serif Display’, Georgia, ‘Times New Roman’, serif;
-font-size: 38px;
-font-weight: 400;
-line-height: 1.15;
-color: #0A0A0A;
-max-width: 500px;
-margin-bottom: 12px;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 38px; font-weight: 400; line-height: 1.15;
+  color: #0A0A0A; max-width: 500px; margin-bottom: 12px;
 }
-
 .header h1 em { color: #2563EB; font-style: italic; }
-
-.header-subtitle {
-font-size: 14px;
-color: #6B7280;
-font-weight: 400;
-}
-
+.header-subtitle { font-size: 14px; color: #6B7280; }
 .clinic-line {
-margin-top: 28px;
-padding: 14px 18px;
-background-color: #EFF6FF;
-border-left: 3px solid #2563EB;
-border-radius: 0 4px 4px 0;
-font-size: 13.5px;
-color: #1E40AF;
+  margin-top: 28px; padding: 14px 18px;
+  background-color: #EFF6FF; border-left: 3px solid #2563EB;
+  border-radius: 0 4px 4px 0; font-size: 13.5px; color: #1E40AF;
 }
-
 .clinic-name { font-weight: 700; color: #1D4ED8; }
-
 /* BODY */
 .body { padding: 0 60px 52px; }
-
-/* INTRO */
-.intro-block {
-padding: 36px 0 32px;
-border-bottom: 1px solid #E5E7EB;
-}
-
-.intro-block p {
-font-size: 14.5px;
-line-height: 1.78;
-color: #374151;
-max-width: 580px;
-}
-
+.intro-block { padding: 36px 0 32px; border-bottom: 1px solid #E5E7EB; }
+.intro-block p { font-size: 14.5px; line-height: 1.78; color: #374151; max-width: 580px; }
 .intro-block p strong { color: #0A0A0A; font-weight: 600; }
-
 /* PHASE */
 .phase { padding: 36px 0; border-bottom: 1px solid #E5E7EB; }
-
-.phase-header {
-display: -webkit-flex;
-display: flex;
--webkit-align-items: flex-start;
-align-items: flex-start;
-gap: 20px;
-margin-bottom: 20px;
-}
-
+.phase-header { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 20px; }
 .phase-num {
-flex-shrink: 0;
-width: 38px;
-height: 38px;
-background-color: #2563EB;
-color: #FFFFFF;
-border-radius: 50%;
-display: -webkit-flex;
-display: flex;
--webkit-align-items: center;
-align-items: center;
--webkit-justify-content: center;
-justify-content: center;
-font-family: ‘DM Serif Display’, Georgia, serif;
-font-size: 16px;
-font-weight: 400;
-margin-top: 2px;
+  flex-shrink: 0; width: 38px; height: 38px; background-color: #2563EB;
+  color: #FFFFFF; border-radius: 50%; display: flex; align-items: center;
+  justify-content: center; font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 16px; margin-top: 2px;
 }
-
 .phase-title-block h2 {
-font-family: ‘DM Serif Display’, Georgia, serif;
-font-size: 22px;
-font-weight: 400;
-color: #0A0A0A;
-margin-bottom: 4px;
-line-height: 1.2;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 22px; font-weight: 400; color: #0A0A0A; margin-bottom: 4px;
 }
-
 .phase-title-block .subtitle {
-font-size: 11px;
-color: #6B7280;
-font-weight: 600;
-letter-spacing: 0.07em;
-text-transform: uppercase;
+  font-size: 11px; color: #6B7280; font-weight: 600;
+  letter-spacing: 0.07em; text-transform: uppercase;
 }
-
-.phase-intro {
-font-size: 13.5px;
-color: #374151;
-line-height: 1.72;
-margin-bottom: 18px;
-padding-left: 58px;
-}
-
+.phase-intro { font-size: 13.5px; color: #374151; line-height: 1.72; margin-bottom: 18px; padding-left: 58px; }
 .phase-intro strong { color: #0A0A0A; font-weight: 600; }
-
 .scenario {
-margin-left: 58px;
-margin-bottom: 12px;
-display: -webkit-flex;
-display: flex;
--webkit-align-items: center;
-align-items: center;
-gap: 10px;
-font-size: 11px;
-font-weight: 700;
-letter-spacing: 0.08em;
-text-transform: uppercase;
-color: #6B7280;
+  margin-left: 58px; margin-bottom: 12px; display: flex; align-items: center; gap: 10px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #6B7280;
 }
-
-.scenario::before {
-content: ‘’;
-display: block;
-width: 18px;
-height: 1.5px;
-background-color: #9CA3AF;
-flex-shrink: 0;
-}
-
-.message-card {
-margin-left: 58px;
-background-color: #F3F4F6;
-border-radius: 8px;
-padding: 22px 22px 20px;
-position: relative;
-}
-
+.scenario::before { content: ''; display: block; width: 18px; height: 1.5px; background-color: #9CA3AF; flex-shrink: 0; }
+.message-card { margin-left: 58px; background-color: #F3F4F6; border-radius: 8px; padding: 22px 22px 20px; position: relative; }
 .quote-mark {
-position: absolute;
-top: -6px;
-left: 14px;
-font-family: ‘DM Serif Display’, Georgia, serif;
-font-size: 54px;
-color: #2563EB;
-line-height: 1;
-pointer-events: none;
-user-select: none;
--webkit-user-select: none;
+  position: absolute; top: -6px; left: 14px;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 54px; color: #2563EB; line-height: 1; pointer-events: none; user-select: none;
 }
-
-.message-card p {
-font-size: 14px;
-line-height: 1.78;
-color: #1F2937;
-padding-top: 10px;
-}
-
+.message-card p { font-size: 14px; line-height: 1.78; color: #1F2937; padding-top: 10px; }
 .ph { color: #2563EB; font-weight: 600; }
-
 .message-label {
-margin-left: 58px;
-margin-top: 10px;
-font-size: 10.5px;
-color: #2563EB;
-font-weight: 700;
-letter-spacing: 0.08em;
-text-transform: uppercase;
+  margin-left: 58px; margin-top: 10px; font-size: 10.5px;
+  color: #2563EB; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
 }
-
 /* OBJECTIONS */
 .objections-section { padding: 36px 0; }
-
-.section-heading {
-display: -webkit-flex;
-display: flex;
--webkit-align-items: center;
-align-items: center;
-gap: 14px;
-margin-bottom: 28px;
-flex-wrap: wrap;
-}
-
-.section-heading h2 {
-font-family: ‘DM Serif Display’, Georgia, serif;
-font-size: 22px;
-font-weight: 400;
-color: #0A0A0A;
-}
-
+.section-heading { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; flex-wrap: wrap; }
+.section-heading h2 { font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; font-weight: 400; color: #0A0A0A; }
 .section-badge {
-background-color: #2563EB;
-color: #FFFFFF;
-font-size: 10px;
-font-weight: 700;
-letter-spacing: 0.1em;
-text-transform: uppercase;
-padding: 4px 12px;
-border-radius: 20px;
+  background-color: #2563EB; color: #FFFFFF; font-size: 10px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px;
 }
-
 .obj-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
-
 .obj-table thead tr { background-color: #0A0A0A; }
-
 .obj-table thead th {
-padding: 13px 16px;
-text-align: left;
-font-weight: 700;
-font-size: 10.5px;
-letter-spacing: 0.08em;
-text-transform: uppercase;
-color: #FFFFFF;
+  padding: 13px 16px; text-align: left; font-weight: 700;
+  font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: #FFFFFF;
 }
-
 .obj-table tbody tr { border-bottom: 1px solid #E5E7EB; }
 .obj-table tbody tr:last-child { border-bottom: none; }
 .obj-table tbody tr:nth-child(even) { background-color: #FAFAFA; }
-.obj-table tbody tr:nth-child(odd)  { background-color: #FFFFFF; }
-
-.obj-table td {
-padding: 16px;
-vertical-align: top;
-line-height: 1.65;
-color: #1F2937;
-}
-
-.obj-table td:first-child {
-width: 36%;
-font-weight: 500;
-color: #0A0A0A;
-font-style: italic;
-border-right: 1px solid #E5E7EB;
-}
-
+.obj-table tbody tr:nth-child(odd) { background-color: #FFFFFF; }
+.obj-table td { padding: 16px; vertical-align: top; line-height: 1.65; color: #1F2937; }
+.obj-table td:first-child { width: 36%; font-weight: 500; color: #0A0A0A; font-style: italic; border-right: 1px solid #E5E7EB; }
 .td-b { color: #2563EB; font-weight: 600; font-style: normal; }
-
 /* CTA */
-.cta-block {
-margin: 0 -60px;
-padding: 44px 60px;
-background-color: #0A0A0A;
-}
-
-.cta-tag {
-font-size: 10.5px;
-font-weight: 700;
-letter-spacing: 0.14em;
-text-transform: uppercase;
-color: #BFDBFE;
-margin-bottom: 16px;
-}
-
-.cta-block h3 {
-font-family: ‘DM Serif Display’, Georgia, serif;
-font-size: 26px;
-font-weight: 400;
-line-height: 1.3;
-margin-bottom: 14px;
-color: #FFFFFF;
-}
-
+.cta-block { margin: 0 -60px; padding: 44px 60px; background-color: #0A0A0A; }
+.cta-tag { font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #BFDBFE; margin-bottom: 16px; }
+.cta-block h3 { font-family: 'DM Serif Display', Georgia, serif; font-size: 26px; font-weight: 400; line-height: 1.3; margin-bottom: 14px; color: #FFFFFF; }
 .cta-block h3 em { color: #60A5FA; font-style: italic; }
-
-.cta-block p {
-font-size: 13.5px;
-line-height: 1.72;
-color: #D1D5DB;
-margin-bottom: 26px;
-max-width: 480px;
-}
-
+.cta-block p { font-size: 13.5px; line-height: 1.72; color: #D1D5DB; margin-bottom: 26px; max-width: 480px; }
 .cta-btn {
-display: inline-block;
-background-color: #2563EB;
-color: #FFFFFF;
-font-family: ‘DM Sans’, Helvetica, Arial, sans-serif;
-font-size: 13.5px;
-font-weight: 600;
-padding: 14px 30px;
-border-radius: 4px;
-text-decoration: none;
-letter-spacing: 0.02em;
+  display: inline-block; background-color: #2563EB; color: #FFFFFF;
+  font-family: 'DM Sans', Helvetica, Arial, sans-serif;
+  font-size: 13.5px; font-weight: 600; padding: 14px 30px;
+  border-radius: 4px; text-decoration: none; letter-spacing: 0.02em;
 }
-
-/* PAGE FOOTER */
+/* FOOTER */
 .page-footer {
-padding: 18px 60px;
-border-top: 1px solid #E5E7EB;
-display: -webkit-flex;
-display: flex;
--webkit-justify-content: space-between;
-justify-content: space-between;
--webkit-align-items: center;
-align-items: center;
+  padding: 18px 60px; border-top: 1px solid #E5E7EB;
+  display: flex; justify-content: space-between; align-items: center;
 }
-
-.page-footer .brand {
-font-size: 11px;
-font-weight: 700;
-color: #2563EB;
-letter-spacing: 0.1em;
-text-transform: uppercase;
-}
-
+.page-footer .brand { font-size: 11px; font-weight: 700; color: #2563EB; letter-spacing: 0.1em; text-transform: uppercase; }
 .page-footer .by { font-size: 11px; color: #9CA3AF; }
-
 /* MODAL */
 .modal-overlay {
-position: fixed;
-top: 0; left: 0; right: 0; bottom: 0;
-background-color: rgba(10,10,10,0.65);
-display: -webkit-flex;
-display: flex;
--webkit-align-items: center;
-align-items: center;
--webkit-justify-content: center;
-justify-content: center;
-z-index: 9999;
-padding: 20px;
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(10,10,10,0.65);
+  display: none; align-items: center; justify-content: center;
+  z-index: 9999; padding: 20px;
 }
-
 .modal-box {
-background-color: #FFFFFF;
-border-radius: 10px;
-padding: 42px 38px;
-max-width: 400px;
-width: 100%;
-box-shadow: 0 24px 64px rgba(0,0,0,0.25);
+  background-color: #FFFFFF; border-radius: 10px; padding: 42px 38px;
+  max-width: 400px; width: 100%; box-shadow: 0 24px 64px rgba(0,0,0,0.25);
 }
-
-.modal-logo {
-display: -webkit-flex;
-display: flex;
--webkit-align-items: center;
-align-items: center;
-gap: 8px;
-font-size: 10.5px;
-font-weight: 700;
-letter-spacing: 0.14em;
-text-transform: uppercase;
-color: #2563EB;
-margin-bottom: 20px;
-}
-
-.modal-box h2 {
-font-family: ‘DM Serif Display’, Georgia, serif;
-font-size: 23px;
-font-weight: 400;
-color: #0A0A0A;
-margin-bottom: 10px;
-line-height: 1.28;
-}
-
-.modal-box p {
-font-size: 13.5px;
-color: #6B7280;
-line-height: 1.65;
-margin-bottom: 24px;
-}
-
+.modal-logo { display: flex; align-items: center; gap: 8px; font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #2563EB; margin-bottom: 20px; }
+.modal-box h2 { font-family: 'DM Serif Display', Georgia, serif; font-size: 23px; font-weight: 400; color: #0A0A0A; margin-bottom: 10px; line-height: 1.28; }
+.modal-box p { font-size: 13.5px; color: #6B7280; line-height: 1.65; margin-bottom: 24px; }
 .modal-input {
-display: block;
-width: 100%;
-border: 1.5px solid #E5E7EB;
-border-radius: 5px;
-padding: 13px 16px;
-font-size: 14px;
-font-family: ‘DM Sans’, Helvetica, Arial, sans-serif;
-color: #0A0A0A;
-outline: none;
-margin-bottom: 14px;
-background-color: #FAFAFA;
--webkit-appearance: none;
-appearance: none;
+  display: block; width: 100%; border: 1.5px solid #E5E7EB; border-radius: 5px;
+  padding: 13px 16px; font-size: 14px; font-family: 'DM Sans', Helvetica, Arial, sans-serif;
+  color: #0A0A0A; outline: none; margin-bottom: 14px; background-color: #FAFAFA;
+  -webkit-appearance: none; appearance: none;
 }
-
 .modal-input::placeholder { color: #9CA3AF; }
-
 .modal-btn {
-display: block;
-width: 100%;
-background-color: #2563EB;
-color: #FFFFFF;
-border: none;
-border-radius: 5px;
-padding: 14px;
-font-size: 14px;
-font-weight: 600;
-font-family: ‘DM Sans’, Helvetica, Arial, sans-serif;
-cursor: pointer;
-letter-spacing: 0.01em;
+  display: block; width: 100%; background-color: #2563EB; color: #FFFFFF;
+  border: none; border-radius: 5px; padding: 14px; font-size: 14px; font-weight: 600;
+  font-family: 'DM Sans', Helvetica, Arial, sans-serif; cursor: pointer; letter-spacing: 0.01em;
 }
-
 /* RESPONSIVE */
 @media (max-width: 620px) {
-body { padding: 0 0 60px; }
-.page { border-radius: 0; }
-.header { padding: 36px 24px 28px; }
-.header h1 { font-size: 28px; }
-.body { padding: 0 24px 40px; }
-.phase-intro { padding-left: 0; }
-.scenario, .message-card, .message-label { margin-left: 0; }
-.cta-block { margin: 0 -24px; padding: 32px 24px; }
-.page-footer { padding: 16px 24px; flex-direction: column; gap: 4px; text-align: center; }
+  body { padding: 0 0 60px; }
+  .page { border-radius: 0; }
+  .header { padding: 36px 24px 28px; }
+  .header h1 { font-size: 28px; }
+  .body { padding: 0 24px 40px; }
+  .phase-intro { padding-left: 0; }
+  .scenario, .message-card, .message-label { margin-left: 0; }
+  .cta-block { margin: 0 -24px; padding: 32px 24px; }
+  .page-footer { padding: 16px 24px; flex-direction: column; gap: 4px; text-align: center; }
 }
-
 @media print {
-body { background: white; padding: 0; }
-.page { box-shadow: none; }
-.cta-btn { display: none; }
-.topbar { display: none !important; }
+  body { background: white; padding: 0; }
+  .page { box-shadow: none; }
+  .cta-btn { display: none; }
+  .modal-overlay { display: none !important; }
 }
 </style>
-
 </head>
 <body>
 
-<!-- TOP BAR -->
+<!-- MODAL -->
 
-<div class="topbar" id="topbar">
-  <div class="topbar-inner">
-    <span class="topbar-label">✏️ Nombre de la clínica:</span>
-    <input class="topbar-input" type="text" id="clinicInput" placeholder="Ej: Clínica Estética Bella" maxlength="60">
-    <button class="topbar-btn" id="modalBtn">Aplicar →</button>
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <div class="modal-logo"><span class="brand-dot"></span> HOST UP</div>
+    <h2>¿Para qué clínica es este documento?</h2>
+    <p>Escribe el nombre de la clínica y pulsa Aplicar. La URL se actualizará — cópiala y pégala en ilovepdf para convertir a PDF sin que aparezca este cuadro.</p>
+    <input class="modal-input" type="text" id="clinicInput" placeholder="Ej: Clínica Estética Bella" maxlength="60">
+    <button class="modal-btn" id="modalBtn">Aplicar y generar enlace →</button>
   </div>
-  <p class="topbar-hint">Escribe el nombre y pulsa Aplicar. Luego convierte a PDF — esta barra no aparecerá.</p>
 </div>
 
 <div class="page">
@@ -610,7 +302,7 @@ body { background: white; padding: 0; }
     <tbody>
       <tr>
         <td>"Solo quiero saber el precio."</td>
-        <td>Te entiendo perfectamente. El rango suele estar entre <span class="td-b">[Precio Mín]</span> y <span class="td-b">[Precio Máx]</span>, pero como cada rostro es único, no queremos darte un precio cerrado sin que la doctora vea qué necesitas exactamente para que no pagues de más. ¿Te reservo la valoración gratuita?</td>
+        <td>Te entiendo perfectamente. El rango suele estar entre <span class="td-b">[Precio Mín]</span> y <span class="td-b">[Precio Máx]</span>, pero como cada rostro es único, no queremos darte un precio cerrado sin que la doctora vea qué necesitas exactamente. ¿Te reservo la valoración gratuita?</td>
       </tr>
       <tr>
         <td>"Me pilla lejos / No tengo tiempo."</td>
@@ -618,19 +310,19 @@ body { background: white; padding: 0; }
       </tr>
       <tr>
         <td>"Me lo tengo que pensar."</td>
-        <td>¡Claro! Es normal. Si te parece, te escribo en un par de días por si te ha surgido alguna duda técnica que la doctora pueda aclararte por aquí. ¡Un saludo!</td>
+        <td>¡Claro! Es normal. Si te parece, te escribo en un par de días por si te ha surgido alguna duda técnica que la doctora pueda aclararte. ¡Un saludo!</td>
       </tr>
       <tr>
         <td>"En otra clínica es más barato."</td>
-        <td>Es normal encontrar precios distintos, pero en <span class="td-b clinic-name">Tu Clínica</span> priorizamos la calidad del producto <span class="td-b">[Citar marca si es premium]</span> y la experiencia de nuestra doctora. Al final, lo barato en salud suele salir caro. ¿Te gustaría ver nuestros resultados reales en clínica?</td>
+        <td>Es normal encontrar precios distintos, pero en <span class="td-b clinic-name">Tu Clínica</span> priorizamos la calidad del producto <span class="td-b">[Citar marca si es premium]</span> y la experiencia de nuestra doctora. Al final, lo barato en salud suele salir caro. ¿Te gustaría ver nuestros resultados reales?</td>
       </tr>
       <tr>
         <td>"Ya lo he hecho antes en otro sitio."</td>
-        <td>Perfecto, entonces ya sabes lo que es. Te proponemos una valoración gratuita donde la doctora revisa el trabajo anterior y te dice exactamente qué se puede mejorar o mantener. Sin compromiso. ¿Te parece bien esta semana?</td>
+        <td>Perfecto, entonces ya sabes lo que es. Te proponemos una valoración gratuita donde la doctora revisa el trabajo anterior y te dice exactamente qué se puede mejorar. Sin compromiso. ¿Te parece bien esta semana?</td>
       </tr>
       <tr>
         <td>"Tengo miedo / No sé si me atrevo."</td>
-        <td>Es la respuesta más normal del mundo. Por eso hacemos la valoración: para que conozcas a la doctora, resuelvas todas tus dudas y, si al final decides no hacerlo, sin ningún problema. ¿Te animamos a conocernos?</td>
+        <td>Es la respuesta más normal del mundo. Por eso hacemos la valoración: para que conozcas a la doctora, resuelvas todas tus dudas y, si decides no hacerlo, sin ningún problema. ¿Te animamos a conocernos?</td>
       </tr>
     </tbody>
   </table>
@@ -645,14 +337,14 @@ body { background: white; padding: 0; }
 </div>
 ```
 
-  </div><!-- end body -->
+  </div>
 
   <div class="page-footer">
     <span class="brand">HOST UP</span>
     <span class="by">Documento confidencial · Por Claudia de Host Up</span>
   </div>
 
-</div><!-- end page -->
+</div>
 
 <script>
 (function() {
@@ -661,30 +353,31 @@ body { background: white; padding: 0; }
   var btn     = document.getElementById('modalBtn');
 
   function setName(name) {
-    if (!name) name = 'Tu Clinica';
     var nodes = document.querySelectorAll('.clinic-name');
     for (var i = 0; i < nodes.length; i++) {
       nodes[i].textContent = name;
     }
-    overlay.style.display = 'none';
   }
 
   function applyFromModal() {
     var name = (input.value || '').trim();
-    if (!name) return;
-    // Reload with clinic name in URL so PDF converters see clean page
+    if (!name) { input.focus(); return; }
+    // Update URL and reload — PDF converter will load clean page with name in URL
     window.location.href = window.location.pathname + '?clinica=' + encodeURIComponent(name);
   }
 
-  // Read clinic name from URL: ?clinica=Nombre+Clinica
+  // Read ?clinica= from URL
   var params = new URLSearchParams(window.location.search);
   var urlName = params.get('clinica');
 
   if (urlName && urlName.trim() !== '') {
+    // Clinic name is in URL — show document directly, no modal
     setName(decodeURIComponent(urlName.trim()));
+    overlay.style.display = 'none';
   } else {
+    // No name in URL — show modal for you to type it
     overlay.style.display = 'flex';
-    setTimeout(function() { input.focus(); }, 150);
+    setTimeout(function() { input.focus(); }, 200);
     btn.addEventListener('click', applyFromModal);
     input.addEventListener('keydown', function(e) {
       if (e.key === 'Enter') applyFromModal();
