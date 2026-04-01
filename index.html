@@ -171,12 +171,44 @@ body {
   .page-footer { padding: 16px 24px; flex-direction: column; gap: 4px; text-align: center; }
 }
 @media print {
-  body { background: white; padding: 0; }
-  .page { box-shadow: none; }
-  .cta-btn { display: none; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  body { background: white !important; padding: 0 !important; margin: 0 !important; }
+  .page {
+    box-shadow: none !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+  }
+  .header { padding: 32px 40px 28px !important; }
+  .body { padding: 0 40px 40px !important; }
+  .cta-block { margin: 0 -40px !important; padding: 32px 40px !important; }
+  .page-footer { padding: 14px 40px !important; }
+  .cta-btn { display: none !important; }
   .modal-overlay { display: none !important; }
+  .phase-intro { padding-left: 48px !important; }
+  .scenario, .message-card, .message-label { margin-left: 48px !important; }
+  .header h1 { font-size: 30px !important; }
+  .phase { page-break-inside: avoid; }
+  .message-card { page-break-inside: avoid; }
+  .objections-section { page-break-inside: avoid; }
 }
+
+/* PDF MODE — activated via ?pdf=1 in URL */
+body.pdf-mode {
+background: white !important;
+padding: 0 !important;
+}
+body.pdf-mode .page {
+max-width: 100% !important;
+width: 210mm !important;
+border-radius: 0 !important;
+box-shadow: none !important;
+margin: 0 auto !important;
+}
+body.pdf-mode .modal-overlay { display: none !important; }
 </style>
+
 </head>
 <body>
 
@@ -366,9 +398,14 @@ body {
     window.location.href = window.location.pathname + '?clinica=' + encodeURIComponent(name);
   }
 
-  // Read ?clinica= from URL
+  // Read params from URL
   var params = new URLSearchParams(window.location.search);
   var urlName = params.get('clinica');
+
+  // If ?pdf=1 is in URL, activate PDF mode (no modal, clean layout)
+  if (params.get('pdf') === '1') {
+    document.body.classList.add('pdf-mode');
+  }
 
   if (urlName && urlName.trim() !== '') {
     // Clinic name is in URL — show document directly, no modal
