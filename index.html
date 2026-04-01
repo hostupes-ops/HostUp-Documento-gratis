@@ -482,23 +482,22 @@ body { padding: 0 0 60px; }
 body { background: white; padding: 0; }
 .page { box-shadow: none; }
 .cta-btn { display: none; }
-.modal-overlay { display: none !important; }
+.topbar { display: none !important; }
 }
 </style>
 
 </head>
 <body>
 
-<!-- MODAL -->
+<!-- TOP BAR -->
 
-<div class="modal-overlay" id="modalOverlay">
-  <div class="modal-box">
-    <div class="modal-logo"><span class="brand-dot"></span> HOST UP</div>
-    <h2>¿Para qué clínica es este documento?</h2>
-    <p>Escribe el nombre de la clínica y lo insertaremos automáticamente en todo el protocolo.</p>
-    <input class="modal-input" type="text" id="clinicInput" placeholder="Ej: Clínica Estética Bella" maxlength="60">
-    <button class="modal-btn" id="modalBtn">Generar documento →</button>
+<div class="topbar" id="topbar">
+  <div class="topbar-inner">
+    <span class="topbar-label">✏️ Nombre de la clínica:</span>
+    <input class="topbar-input" type="text" id="clinicInput" placeholder="Ej: Clínica Estética Bella" maxlength="60">
+    <button class="topbar-btn" id="modalBtn">Aplicar →</button>
   </div>
+  <p class="topbar-hint">Escribe el nombre y pulsa Aplicar. Luego convierte a PDF — esta barra no aparecerá.</p>
 </div>
 
 <div class="page">
@@ -662,7 +661,7 @@ body { background: white; padding: 0; }
   var btn     = document.getElementById('modalBtn');
 
   function setName(name) {
-    if (!name) name = 'Tu Clínica';
+    if (!name) name = 'Tu Clinica';
     var nodes = document.querySelectorAll('.clinic-name');
     for (var i = 0; i < nodes.length; i++) {
       nodes[i].textContent = name;
@@ -670,23 +669,25 @@ body { background: white; padding: 0; }
     overlay.style.display = 'none';
   }
 
-  // Check URL for ?clinica=NombreClinica
+  function applyFromModal() {
+    var name = (input.value || '').trim();
+    if (!name) return;
+    // Reload with clinic name in URL so PDF converters see clean page
+    window.location.href = window.location.pathname + '?clinica=' + encodeURIComponent(name);
+  }
+
+  // Read clinic name from URL: ?clinica=Nombre+Clinica
   var params = new URLSearchParams(window.location.search);
   var urlName = params.get('clinica');
 
   if (urlName && urlName.trim() !== '') {
-    // Name comes from URL — set it directly, no modal shown
     setName(decodeURIComponent(urlName.trim()));
   } else {
-    // No URL param — show modal so you can type the name manually
     overlay.style.display = 'flex';
     setTimeout(function() { input.focus(); }, 150);
-
-    btn.addEventListener('click', function() {
-      setName((input.value || '').trim());
-    });
+    btn.addEventListener('click', applyFromModal);
     input.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') setName((input.value || '').trim());
+      if (e.key === 'Enter') applyFromModal();
     });
   }
 })();
