@@ -657,12 +657,11 @@ body { background: white; padding: 0; }
 
 <script>
 (function() {
-  var input = document.getElementById('clinicInput');
-  var btn = document.getElementById('modalBtn');
   var overlay = document.getElementById('modalOverlay');
+  var input   = document.getElementById('clinicInput');
+  var btn     = document.getElementById('modalBtn');
 
-  function apply() {
-    var name = (input.value || '').trim();
+  function setName(name) {
     if (!name) name = 'Tu Clínica';
     var nodes = document.querySelectorAll('.clinic-name');
     for (var i = 0; i < nodes.length; i++) {
@@ -671,14 +670,25 @@ body { background: white; padding: 0; }
     overlay.style.display = 'none';
   }
 
-  btn.addEventListener('click', apply);
-  input.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') apply();
-  });
+  // Check URL for ?clinica=NombreClinica
+  var params = new URLSearchParams(window.location.search);
+  var urlName = params.get('clinica');
 
-  window.addEventListener('load', function() {
+  if (urlName && urlName.trim() !== '') {
+    // Name comes from URL — set it directly, no modal shown
+    setName(decodeURIComponent(urlName.trim()));
+  } else {
+    // No URL param — show modal so you can type the name manually
+    overlay.style.display = 'flex';
     setTimeout(function() { input.focus(); }, 150);
-  });
+
+    btn.addEventListener('click', function() {
+      setName((input.value || '').trim());
+    });
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') setName((input.value || '').trim());
+    });
+  }
 })();
 </script>
 
